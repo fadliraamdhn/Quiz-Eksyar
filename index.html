@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Quiz Website</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Sharia Economic Quiz</h1>
-        </header>
+        <aside>
+            <ul>
+                <li><button><i class='bx bx-trophy bx-md'></i></button></li>
+            </ul>
+        </aside>
 
         <div class="quiz-container">
+
             <div class="question">
-                <p id="question-text">Ini Adalah Preview?</p>
+                <h3 id="question-text">Ini Adalah pertanyaan?</h3>
             </div>
+
 
             <div class="options">
                 <button class="option" id="option1">1</button>
@@ -24,7 +34,14 @@
                 <button class="option" id="option4">4</button>
             </div>
 
-            <button class="next-button" id="next-btn">Next Question</button>
+            <div class="question-setting">
+                <div>
+                    <button class="previous-button" id="previous-btn"><</button>
+                </div>
+                <div>
+                    <button class="next-button" id="next-btn">></i></button>
+                </div>
+            </div>
         </div>
 
         <footer>

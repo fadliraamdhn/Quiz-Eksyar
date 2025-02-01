@@ -1,88 +1,148 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    height: 100vh; /* Make sure the body takes the full height of the screen */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    background: linear-gradient(to bottom left, rgb(196, 196, 196), rgb(0, 0, 0));
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
-.container {
-    width: 100%;
-    max-width: 600px; /* Maximum width for the quiz */
-    padding: 20px;
+body .container {
     background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Optional, for rounded corners */
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-size: 2.5em;
-    color: #333;
-}
-
-.quiz-container {
-    text-align: center;
-}
-
-.question p {
-    font-size: 1.6em;
-    margin-bottom: 20px;
-}
-
-.options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.option {
-    padding: 15px;
-    font-size: 1.2em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 5px; /* Optional, for rounded buttons */
-}
-
-.option:hover {
-    background-color: #45a049;
-}
-
-.next-button {
-    padding: 15px;
-    font-size: 1.2em;
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.486);
     width: 100%;
-    transition: background-color 0.3s;
-    border-radius: 5px; /* Optional, for rounded button */
+    max-width: 400px;
 }
 
-.next-button:hover {
-    background-color: #007b9e;
+aside {
+    position: fixed;
+    top: 140px;
+    left: 1000px;
 }
 
-footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #777;
+aside li {
+    list-style: none;
 }
+
+aside li button {
+    opacity: 35%;
+    width: 60px;
+    height: 60px;
+    background-color: #ffd000;
+    color: rgba(0, 0, 0, 0.555);
+    border: solid rgba(0, 0, 0, 0.411) 1px;
+    border-radius: 50%;  /* Makes the button circular */
+    font-size: 30px;      /* Size of the icon or text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+aside li button:hover {
+    background-color: #ffd000;
+    animation: rotate 2.5s ease-in-out infinite;
+    opacity: 100%;
+}
+
+aside li button:hover {
+    outline: none;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg); /* Start with no rotation */
+    }
+    25% {
+      transform: rotate(30deg); /* Rotate 30 degrees to the right */
+    }
+    50% {
+      transform: rotate(-30deg); /* Return to the right */
+    }
+    75% {
+      transform: rotate(30deg); /* Rotate 30 degrees to the right */
+    }
+    100% {
+      transform: rotate(0deg); /* Return to the center */
+    }
+}
+
+@media (max-width: 992px) {
+    aside {
+        left: 680px;
+    }
+}
+
+@media (max-width: 767px) {
+    aside {
+        top: 75px;
+        left: 350px;
+    }
+}
+
+body .question {
+    place-items: center;
+    margin-bottom: 15px;
+}
+
+body .options {
+    display: flex;
+    flex-direction: column; 
+    gap: 16px; 
+    align-items: center; 
+    margin-top: 20px;
+}
+
+body .options button {
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem; 
+    padding: 12px 20px; 
+    border: solid black 1px; 
+    border-radius: 30px; 
+    width: 100%; 
+    max-width: 400px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+body .option:hover {
+    background-color: #ebe377; /* Darker blue on hover */
+    transform: scale(1.02);
+}
+
+body .question-setting {
+    margin-top: 20px;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+body .question-setting .previous-button {
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body .question-setting .previous-button:hover {
+    background-color: #ebe377;
+    transform: scale(1.10);
+}
+
+body .question-setting .next-button {
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+} 
+
+body .question-setting .next-button:hover {
+    background-color: #ebe377;
+    transform: scale(1.10);
+} 
+
+
