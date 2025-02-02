@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <div class="start-button" id="start-button">
+        <button class="start" id="start">MULAI</button>
+    </div>
+
+    <!--Rules-->
+    <div class="rules-container hidden" id="rules-container">
+        <ol class="styled-list">
+            <h1>Peraturan</h1>
+            <li>Tidak boleh mencontek</li>
+            <li>Tidak boleh bertanya kepada teman</li>
+            <li>Selamat mengerjakan!</li>
+        </ol>
+        <div class="lets">
+            <button class="play" id="play">Siap! Saya Mengerti</button>
+            <button class="noplay" id="noplay">Tidak Jadi</button>
+        </div>
+    </div>
+
     <div class="container">
         <aside>
             <ul>
@@ -20,7 +39,8 @@
             </ul>
         </aside>
 
-        <div class="quiz-container">
+
+        <div class="quiz-container" id="quiz-container-active">
 
             <div class="question">
                 <h3 id="question-text">Ini Adalah pertanyaan?</h3>

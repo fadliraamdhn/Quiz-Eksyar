@@ -3,10 +3,87 @@
 }
 
 body {
-    background: linear-gradient(to bottom left, rgb(196, 196, 196), rgb(0, 0, 0));
+    background: linear-gradient(to bottom left, rgb(14, 65, 11), rgb(112, 228, 118));
     min-height: 100vh;
     display: grid;
     place-items: center;
+}
+
+body .start-button {
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;    
+}
+
+.start-button.hidden {
+    display: none;
+}
+
+body .start-button button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    border: solid black 1px; 
+    border-radius: 30px;
+    padding: 10px 10px;
+    width: 28%;
+    cursor: pointer;
+    transition: scale 0.5 ease-in-out;
+}
+
+body .start-button button:hover {
+    background-color: #ebe377;
+    transform: scale(1.02);
+}
+
+.rules-container {
+    background-color: whitesmoke;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.486);
+    width: 100%;
+    max-width: 400px;
+}
+
+.rules-container.hidden {
+    display: none;
+}
+
+.styled-list {
+    list-style-type: decimal; 
+    margin: 20px;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+    color: #333;   
+}
+
+.styled-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    line-height: 1.6; 
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.styled-list li:hover {
+    background-color: #e4ff48;
+}
+
+.lets {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    font-family: Arial, sans-serif; 
+    color: #333;
+}
+
+.lets button {
+    height: 40px;
+    border-radius: 50px;
+}
+
+.lets button:hover {
+    background-color: #e4ff48;
 }
 
 body .container {
@@ -16,6 +93,7 @@ body .container {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.486);
     width: 100%;
     max-width: 400px;
+    display: none;
 }
 
 aside {
@@ -46,7 +124,7 @@ aside li button {
 
 aside li button:hover {
     background-color: #ffd000;
-    animation: rotate 2.5s ease-in-out infinite;
+    animation: rotate 1s ease-in-out infinite;
     opacity: 100%;
 }
 
@@ -112,7 +190,7 @@ body .options button {
 }
 
 body .option:hover {
-    background-color: #ebe377; /* Darker blue on hover */
+    background-color: #ebe377;
     transform: scale(1.02);
 }
 
