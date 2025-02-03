@@ -93,6 +93,9 @@ body .container {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.486);
     width: 100%;
     max-width: 400px;
+}
+
+body .container.active {
     display: none;
 }
 
@@ -163,35 +166,50 @@ aside li button:hover {
     }
 }
 
+
 body .question {
     place-items: center;
     margin-bottom: 15px;
 }
 
+body .question p {
+    text-align: justify;
+    font-weight: 400;
+    border-bottom: solid #333 1px;
+    padding-bottom: 20px;
+}
+
 body .options {
     display: flex;
     flex-direction: column; 
-    gap: 16px; 
-    align-items: center; 
+    gap: 16px;
     margin-top: 20px;
 }
 
 body .options button {
     background-color: #ffffff; 
     color: rgb(0, 0, 0);
-    font-size: 1.2rem; 
-    padding: 12px 20px; 
-    border: solid black 1px; 
-    border-radius: 30px; 
+    font-size: 16px;
+    border: solid black 1px;
     width: 100%; 
+    padding: 8px 8px;
     max-width: 400px; 
     cursor: pointer; 
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0px 2px #7a7a7a;
 }
 
-body .option:hover {
+body .btn:hover {
     background-color: #ebe377;
     transform: scale(1.02);
+}
+
+body .options .btn.correct {
+    background-color: #9aeabc;
+}
+
+body .options .btn.incorrect {
+    background: #ff9393;
 }
 
 body .question-setting {
@@ -201,15 +219,8 @@ body .question-setting {
     justify-content: flex-end;
 }
 
-body .question-setting .previous-button {
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-body .question-setting .previous-button:hover {
-    background-color: #ebe377;
-    transform: scale(1.10);
+.question-setting.hidden {
+    display: none;
 }
 
 body .question-setting .next-button {
@@ -221,6 +232,19 @@ body .question-setting .next-button {
 body .question-setting .next-button:hover {
     background-color: #ebe377;
     transform: scale(1.10);
-} 
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    padding-bottom: 15px;
+    text-align: center;
+    box-shadow: 1rem 0 1rem rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    background-color: rgb(212, 226, 198);
+}
 
 
