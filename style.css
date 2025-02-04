@@ -15,6 +15,11 @@ body .start-button {
     width: 100%;    
 }
 
+body .start-button h1 {
+    color: #ffffff;
+    -webkit-text-stroke: #000000 1px;
+}
+
 .start-button.hidden {
     display: none;
 }
@@ -166,6 +171,21 @@ aside li button:hover {
     }
 }
 
+body .quiz-container #back {
+    margin: auto;
+    display: block;
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 150px;
+    height: 28px;
+    box-shadow: 1px 1px 3px 1px black;
+}
+
+body .quiz-container #back:hover {
+    background-color: #d3ff6c;
+}
 
 body .question {
     place-items: center;
@@ -199,9 +219,13 @@ body .options button {
     box-shadow: 0px 2px #7a7a7a;
 }
 
-body .btn:hover {
+body .btn:hover:not([disabled]) {
     background-color: #ebe377;
     transform: scale(1.02);
+}
+
+body .btn:disabled {
+    cursor: no-drop;
 }
 
 body .options .btn.correct {
@@ -212,26 +236,21 @@ body .options .btn.incorrect {
     background: #ff9393;
 }
 
-body .question-setting {
+body .container .neon {
     margin-top: 20px;
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
+    border-radius: 5px;
+    border-color: rgb(73, 73, 73);
+    color: rgb(82, 82, 82);
+    width: 100%;
+    max-width: 100px;
+    height: 35px;
+    scale: 1;
+    transition: scale 0.5s ease-out;
 }
 
-.question-setting.hidden {
-    display: none;
-}
-
-body .question-setting .next-button {
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-} 
-
-body .question-setting .next-button:hover {
-    background-color: #ebe377;
-    transform: scale(1.10);
+body .container .neon:hover {
+    scale: 1.01;
+    color: rgb(0, 0, 0);
 }
 
 footer {

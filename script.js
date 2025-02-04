@@ -100,12 +100,13 @@ const container = document.getElementById("container")
 const questionTitle = document.getElementById("question-text")
 const answerButtons = document.getElementById("answer-button")
 const nextButton = document.getElementById("next-btn")
-const nextGame = document.getElementById("next-game")
+const quizContainer = document.getElementById("quiz-container-active")
 
 // fungsi memanggil rules
 startButton.addEventListener("click", () => {
     rules.classList.remove("hidden");
     newStart.classList.add("hidden");
+    document.getElementById("back").remove();
 });
 
 //fungsi kembali ke start
@@ -118,6 +119,7 @@ think.addEventListener("click", () => {
 playButton.addEventListener("click", () => {
     rules.classList.add("hidden");
     container.classList.remove("active");
+    startQuiz();
 });
 
 let currentQuestionIndex = 0;
@@ -126,7 +128,7 @@ let score = 0;
 function startQuiz () {
     currentQuestionIndex = 0;
     score = 0;
-    nextGame.classList.remove("hidden");
+    nextButton.innerHTML = "NEXT";
     showQuestion();
 }
 
@@ -161,6 +163,8 @@ function selectAnswer(e) {
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
         selectedBtn.classList.add("correct");
+        score++;
+        finalScore = score * 10;
     }else{
         selectedBtn.classList.add("incorrect");
     }
@@ -170,7 +174,43 @@ function selectAnswer(e) {
         }
         button.disabled = true;
     });
-    nextGame.classList.remove("hidden");
+    nextButton.style.display = "block";
 }
 
+function showScore() {
+    resetState();
+    questionTitle.innerHTML = `SELAMAT KAMU MENDAPATKAN NILAI <br> ${finalScore}`;
+    const inputButton = document.createElement("button");
+    inputButton.innerHTML = "Kembali";
+    inputButton.setAttribute("id", "back");
+    document.getElementById("quiz-container-active").appendChild(inputButton);
+
+    const home = document.getElementById("back")
+    back.addEventListener("click", () => {
+        newStart.classList.remove("hidden");
+        container.classList.add("active");
+    });
+}
+
+function handleNextButton() {
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
+    }else{
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", () => {
+    if(currentQuestionIndex < questions.length) {
+        handleNextButton();
+    }else{
+        startQuiz();
+    }
+})
+
 startQuiz();
+
+
+
+
